@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="60%" stop-color="#059669" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+
+    <!-- Store Canopy Gradient -->
+    <linearGradient id="canopyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a" />
+      <stop offset="100%" stop-color="#fbbf24" />
+    </linearGradient>
+
+    <!-- Shadow filter -->
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="1.5" flood-color="#000000" flood-opacity="0.25" />
+    </filter>
+  </defs>
+
+  <!-- Squircle Base Badge -->
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#bgGrad)" />
+  <rect x="2" y="2" width="60" height="60" rx="16" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" />
+
+  <!-- Market Storefront Canopy (Awning) -->
+  <g filter="url(#shadow)">
+    <!-- Top Bar -->
+    <rect x="14" y="13" width="36" height="3" rx="1.5" fill="#ffffff" />
+    
+    <!-- Awning Waves -->
+    <path d="M14 16 L17 26 C17 28 20 28 20 26 L22 16 L25 16 L27 26 C27 28 30 28 30 26 L31 16 L33 16 L34 26 C34 28 37 28 37 26 L39 16 L42 16 L44 26 C44 28 47 28 47 26 L50 16 Z" fill="#ffffff" opacity="0.95" />
+    
+    <!-- Gold Awning Stripes Accent -->
+    <path d="M20 16 L20 26 C20 28 23 28 23 26 L23 16 Z" fill="url(#canopyGrad)" />
+    <path d="M30 16 L30 26 C30 28 33 28 33 26 L33 16 Z" fill="url(#canopyGrad)" />
+    <path d="M40 16 L40 26 C40 28 43 28 43 26 L43 16 Z" fill="url(#canopyGrad)" />
+  </g>
+
+  <!-- Shopping Cart with POS Checkmark -->
+  <g filter="url(#shadow)">
+    <!-- Cart Body Basket -->
+    <path d="M19 32 H47 L43 44 H25 L21 32 Z" fill="#ffffff" fill-opacity="0.9" stroke="#ffffff" stroke-width="1.5" stroke-linejoin="round" />
+    
+    <!-- Cart Handle -->
+    <path d="M16 30 H19 L21 34" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+    
+    <!-- Cart Chassis / Base -->
+    <path d="M23 45 L25 48 H42" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    
+    <!-- Cart Wheels -->
+    <circle cx="27" cy="51" r="2.5" fill="#ffffff" />
+    <circle cx="40" cy="51" r="2.5" fill="#ffffff" />
+
+    <!-- Center POS Checkmark (Success / Smart Market) -->
+    <path d="M29 38 L32.5 41.5 L39 34" stroke="url(#canopyGrad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+</svg>
