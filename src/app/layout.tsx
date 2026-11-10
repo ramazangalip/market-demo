@@ -31,6 +31,18 @@ export default function RootLayout({
           <Sidebar />
           <main className="lg:ml-64 min-h-screen pb-20 lg:pb-0">
             {children}
+            <footer className="lg:hidden px-4 pb-28 pt-2 text-center text-[10px] text-slate-400/80 dark:text-slate-500/80">
+              Bu sistem{' '}
+              <a
+                href="https://visiondevstudio.com.tr/"
+                target="_blank"
+                rel="noreferrer"
+                className="transition-colors hover:text-slate-600 dark:hover:text-slate-300"
+              >
+                VisionDevStudio
+              </a>{' '}
+              tarafından tasarlanmıştır.
+            </footer>
           </main>
           <ToastContainer />
         </StoreProvider>
