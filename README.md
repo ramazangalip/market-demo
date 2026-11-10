@@ -52,6 +52,15 @@ Ardından uygulamayı [http://localhost:3000](http://localhost:3000) adresinde a
 | `npm run start` | Üretim derlemesini çalıştırır. |
 | `npm run lint` | ESLint denetimini çalıştırır. |
 
+## Mobil uygulama (PWA)
+
+MarketPOS, Android ve iOS cihazlara ana ekrandan açılan bir **Progressive Web App (PWA)** olarak kurulabilir. PWA, APK/IPA dosyası veya uygulama mağazası yayını gerektirmez; uygulama doğrudan tarayıcıdan yüklenir ve bağımsız bir uygulama penceresinde açılır.
+
+- **Android:** Chrome veya Edge menüsünden **Uygulamayı yükle** ya da **Ana ekrana ekle** seçeneğini kullanın.
+- **iPhone / iPad:** Uygulamayı Safari’de açın, **Paylaş** düğmesine dokunun ve **Ana Ekrana Ekle** seçeneğini kullanın.
+- Kurulumun çalışması için uygulama bir HTTPS alan adında yayınlanmalıdır. `localhost` geliştirme ortamı bunun istisnasıdır.
+- Uygulama açıldıktan sonra ziyaret edilen ekranlar ve statik varlıklar çevrimdışı kullanım için önbelleğe alınır. İşletme verileri cihazın kendi `localStorage` alanında kalır.
+
 ## Kullanım
 
 1. **Stok Yönetimi** bölümünden ürünleri görüntüleyin veya yeni ürün ekleyin.

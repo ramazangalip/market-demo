@@ -4,6 +4,7 @@ import './globals.css';
 import { StoreProvider } from '@/lib/store';
 import Sidebar from '@/components/Sidebar';
 import ToastContainer from '@/components/Toast';
+import ServiceWorkerRegistration from '@/components/ServiceWorkerRegistration';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -15,7 +16,12 @@ export const metadata: Metadata = {
       { url: '/favicon.svg', type: 'image/svg+xml' },
     ],
     shortcut: '/favicon.svg',
-    apple: '/favicon.svg',
+    apple: '/apple-touch-icon.png',
+  },
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'black-translucent',
+    title: 'MarketPOS',
   },
 };
 
@@ -29,6 +35,7 @@ export default function RootLayout({
       <body className={`${inter.className} bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 transition-colors duration-200 antialiased min-h-screen selection:bg-emerald-500 selection:text-white`}>
         <StoreProvider>
           <Sidebar />
+          <ServiceWorkerRegistration />
           <main className="lg:ml-64 min-h-screen pb-20 lg:pb-0">
             {children}
             <footer className="lg:hidden px-4 pb-28 pt-2 text-center text-[10px] text-slate-400/80 dark:text-slate-500/80">
