@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MarketPOS
 
-## Getting Started
+MarketPOS; küçük market ve bakkal işletmeleri için hazırlanmış, tarayıcıda çalışan modern bir satış noktası (POS), stok ve finans takibi demosudur. Uygulama Türkçe arayüz, mobil uyumlu tasarım ve açık/koyu tema desteği sunar.
 
-First, run the development server:
+> Bu proje bir demodur. Veriler tarayıcının yerel depolama alanında tutulur; sunucu, kullanıcı hesabı veya gerçek ödeme altyapısı içermez.
+
+## Özellikler
+
+- **Yönetim paneli:** Günlük ciro, net kâr, ortalama sepet, kritik stok uyarıları, son işlemler ve 7 günlük performans grafiği.
+- **Hızlı satış / kasa:** Ürün veya barkod arama, hızlı ürünler, sepet yönetimi, nakit ya da kartla satış tamamlama.
+- **Stok yönetimi:** Ürün ekleme, düzenleme ve silme; kategori, maliyet, satış fiyatı, barkod, stok ve hızlı erişim bilgileri.
+- **Gelir–gider takibi:** Gider kaydı, ödeme yöntemi takibi ve mali özetler.
+- **Finansal raporlama:** Son 1, 3, 6 veya 12 aya göre hesaplanan, yazdırılabilir PDF finansal raporu.
+- **Kalıcı tarayıcı verisi:** Ürünler, satışlar, giderler ve tema tercihi `localStorage` içinde saklanır.
+- **Duyarlı arayüz:** Masaüstünde yan menü, mobilde üst ve alt gezinme kullanır.
+
+## Teknolojiler
+
+- [Next.js 16](https://nextjs.org/)
+- React 19 ve TypeScript
+- Tailwind CSS 4
+- Recharts
+- Lucide React
+
+## Gereksinimler
+
+- Node.js 20.9 veya üzeri
+- npm 10 veya üzeri
+
+## Kurulum
+
+```bash
+git clone <depo-adresi>
+cd market-demo
+npm install
+```
+
+Geliştirme sunucusunu başlatın:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Ardından uygulamayı [http://localhost:3000](http://localhost:3000) adresinde açın.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Komutlar
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Komut | Açıklama |
+| --- | --- |
+| `npm run dev` | Geliştirme sunucusunu başlatır. |
+| `npm run build` | Üretim derlemesi oluşturur. |
+| `npm run start` | Üretim derlemesini çalıştırır. |
+| `npm run lint` | ESLint denetimini çalıştırır. |
 
-## Learn More
+## Kullanım
 
-To learn more about Next.js, take a look at the following resources:
+1. **Stok Yönetimi** bölümünden ürünleri görüntüleyin veya yeni ürün ekleyin.
+2. **Hızlı Satış / Kasa** ekranında ürün arayın ya da hızlı ürünlerden sepete ekleyin.
+3. Ödemeyi **Nakit** veya **Kredi Kartı** olarak tamamlayın. Satış stoktan otomatik düşer.
+4. **Gelir - Gider** bölümünden işletme giderlerini kaydedin ve dönemsel raporu yazdırın ya da PDF olarak kaydedin.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Veri saklama ve sıfırlama
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Uygulama başlangıç için örnek ürün, gider ve satış verileri oluşturur. Sonraki değişiklikler yalnızca kullandığınız tarayıcının `localStorage` alanında saklanır. Bu nedenle farklı tarayıcılar veya cihazlar arasında senkronizasyon yapılmaz.
 
-## Deploy on Vercel
+Demo verilerine dönmek için tarayıcı geliştirici araçlarından bu alan adının yerel verilerini temizleyin. Temizlenirken aşağıdaki anahtarlar kaldırılır:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `market-data-version`
+- `market-products`
+- `market-sales`
+- `market-expenses`
+- `market-theme`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Proje yapısı
+
+```text
+src/
+├── app/
+│   ├── page.tsx              # Yönetim paneli
+│   ├── kasa/page.tsx         # Satış ve sepet ekranı
+│   ├── stok/page.tsx         # Stok yönetimi
+│   └── gelir-gider/page.tsx  # Giderler ve raporlama
+├── components/               # Yan menü ve bildirim bileşenleri
+└── lib/
+    ├── mockData.ts           # Başlangıç/demo verileri
+    ├── store.tsx             # Uygulama durumu ve localStorage işlemleri
+    └── pdfReport.ts          # Finansal rapor hesaplama/yazdırma
+```
+
+## Notlar
+
+- PDF raporu, yeni açılan yazdırma penceresi üzerinden oluşturulur. Tarayıcınız açılır pencereyi engelliyorsa izin vermeniz gerekir.
+- Gerçek kullanım için bir kimlik doğrulama, sunucu taraflı veritabanı, yetkilendirme ve ödeme entegrasyonu eklenmelidir.
