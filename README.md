@@ -71,6 +71,32 @@ Demo verilerine dönmek için tarayıcı geliştirici araçlarından bu alan ad�
 - `market-expenses`
 - `market-theme`
 
+## Ekran Görüntüleri
+
+### Yönetim paneli
+
+![Yönetim paneli](public/screenshots/yonetim-paneli.png)
+
+### Hızlı satış / kasa
+
+![Hızlı satış ve kasa ekranı](public/screenshots/hizli-satis-kasa.png)
+
+### Stok yönetimi
+
+![Stok yönetimi ekranı](public/screenshots/stok-yonetimi.png)
+
+### Gelir - gider
+
+![Gelir gider ekranı](public/screenshots/gelir-gider.png)
+
+### Gider ekleme
+
+![Gider ekleme penceresi](public/screenshots/gider-ekle.png)
+
+### Ürün ekleme
+
+![Ürün ekleme penceresi](public/screenshots/urun-ekle.png)
+
 ## Proje yapısı
 
 ```text
